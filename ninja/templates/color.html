@@ -1,0 +1,19 @@
+<html>
+<head>
+</head>
+<body>
+  {% if color=='blue'%}
+    <img src="/static/img/blue.jpg">
+  {% elif color=='green'%}
+    <img src='/static/img/green.jpg'>
+  {% elif color=='black'%}
+    <img src="/static/img/black.jpg">
+  {% elif color=='red'%}
+    <img src="/static/img/red.jpg">
+  {% else %}
+    <img src='/static/img/novak.png'>
+  {% endif %}
+</body>
+</html>
+
+<!-- {{ url_for('static', filename='/static/img/blue.jpg')}} -->

@@ -1,0 +1,32 @@
+<html>
+<head>
+  <title>Advanced Validation Example</title>
+</head>
+<body>
+  <h1>Registration Form</h1>
+  <!-- <form action='/' method='POST'> -->
+  <form action='/validation' method='POST'>
+    Email:  <input type="text" name='email'><br>
+    First Name: <input type="text" name='first_name'><br>
+    Last Name: <input type="text" name='last_name'><br>
+    Password: <input type="text" name='password'><br>
+    Confirm_Password: <input type="password" name='confirm_password'><br><br>
+    <!-- Birth-Date: <input type="text" name='birthdate'><br><br> -->
+    <input type="submit" value='Submit'>
+  </form>
+  {% with messages = get_flashed_messages(with_categories=true)%}
+    {% if messages %}
+      <p class=flashes></P>
+      {% for category, message in messages %}
+       {%if category == 'name_error'%}
+        <p>{{ message }}></p>
+       {%elif category == 'email_error'%}
+         <p>{{ message }}</p>
+       {%endif%}
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+
+  <p>{{ session['first_name'] }}</p>
+</body>
+</html>

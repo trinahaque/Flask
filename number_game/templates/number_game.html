@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <!-- {%if session['result']%}
+      {{session['result']}}
+    {%endif%} -->
+    <h2>Welcome to the Great Number Game</h1>
+    <p>Pick a number between 1 and 100</p>
+  <!-- <form action="/check" method="POST">
+    <input type="text" name='guess'><br><br>
+    <input type="submit" name='submit' value="Normal">
+  </form> -->
+    <!-- <input type="text" name='guess'><br><br> -->
+    <form action="/check" method="POST">
+      <input type="text" name='guess'><br><br>
+      <input type="submit" name='submit' value="Normal">
+    </form>
+    <p> {{ session["result"] }} </p>
+    <!-- <a href="/check/{{session['key']}}" name='check'>Check</a><br> -->
+    <!-- if i don't submit in form, use the code above -->
+
+    <a href="/reset" name='again'>Reset</a>
+  </body>
+</html>
